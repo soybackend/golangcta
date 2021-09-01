@@ -49,7 +49,6 @@ func (repository *SellerRepository) GetSeller(c *gin.Context) {
 			c.AbortWithStatus(http.StatusNotFound)
 			return
 		}
-
 		c.AbortWithStatusJSON(http.StatusInternalServerError, gin.H{"error": err})
 		return
 	}

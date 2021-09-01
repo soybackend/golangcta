@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func cincoMensajes (msg string) {
 	for i := 1; i <= 5; i++ {
@@ -10,7 +12,7 @@ func cincoMensajes (msg string) {
 
 func main()  {
 	fmt.Println("Lanzando...")
-	go cincoMensajes("Puede que no siempre termine...")
+	go cincoMensajes("Puede que no siempre termine.")
 	cincoMensajes("Siempre termina.")
 	fmt.Println("Finalizado.")
 }

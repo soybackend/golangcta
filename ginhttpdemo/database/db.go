@@ -21,7 +21,6 @@ func InitDb() *gorm.DB {
 func connectDB() (*gorm.DB) {
 	var err error
 	dsn := DB_USERNAME +":"+ DB_PASSWORD +"@tcp"+ "(" + DB_HOST + ":" + DB_PORT +")/" + DB_NAME + "?" + "parseTime=true&loc=Local"
-
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 
 	if err != nil {

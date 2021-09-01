@@ -6,11 +6,11 @@ import (
 )
 
 func main()  {
-	const numTasks = 3
+	const nt = 10
 	wg := sync.WaitGroup{}
-	wg.Add(numTasks)
+	wg.Add(nt)
 
-	for i := 0; i < numTasks; i++ {
+	for i := 0; i < nt; i++ {
 		numTask := i
 		go func() {
 			defer wg.Done()

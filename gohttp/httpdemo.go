@@ -19,7 +19,7 @@ func (mr *Rest) requestGet(ident string, rw http.ResponseWriter) {
 	}
 }
 
-func (mr *Rest) requestPost (ident, document string, rw http.ResponseWriter){
+func (mr *Rest) requestPost(ident, document string, rw http.ResponseWriter){
 	if _, ok := mr.entries[ident]; ok {
 		rw.WriteHeader(http.StatusBadRequest)
 		fmt.Fprintln(rw, "entry already exist", ident)
