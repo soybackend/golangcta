@@ -18,6 +18,7 @@ func main() {
 func setupRouter() *gin.Engine {
 	r := gin.Default()
 
+	// new relic config
 	app, err := newrelic.NewApplication(
 		newrelic.ConfigAppName("CTA App"),
 		newrelic.ConfigLicense("ef5a0bef83707727aab0557e9622d738e35aNRAL"),
@@ -29,6 +30,7 @@ func setupRouter() *gin.Engine {
 	}
 
 	r.Use(nrgin.Middleware(app))
+	// end of newrelic config
 
 	r.GET("ping", func(c *gin.Context) {
 		c.JSON(http.StatusOK, "pong")
